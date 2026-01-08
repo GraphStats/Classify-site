@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify - Organise ton futur</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="logo.png" alt="Classify Logo">
+                <span>Classify</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Fonctionnalités</a>
+                <button class="theme-toggle" id="themeToggle" title="Changer de thème">
+                    <i data-lucide="sun" class="sun"></i>
+                    <i data-lucide="moon" class="moon"></i>
+                </button>
+                <a href="#" class="btn-primary">Télécharger</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container hero-centered">
+            <div class="hero-content">
+                <div class="badge">Version 7.4.6 disponible</div>
+                <h1>Organise tes cours comme jamais auparavant.</h1>
+                <p>L'espace de travail ultime pour les étudiants. Centralise tes cours, planifie tes révisions et
+                    réussis tes examens en toute sérénité.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn-primary lg">Obtenir Classify gratuitement</a>
+                    <a href="#features" class="btn-secondary lg">Voir les fonctionnalités</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <label>Pourquoi Classify ?</label>
+                <h2>Conçu pour l'efficacité</h2>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="icon-wrap purple">
+                        <i data-lucide="mouse-pointer-2"></i>
+                    </div>
+                    <h3>Drag & Drop Intuitif</h3>
+                    <p>Range tes cours dans des dossiers d'un simple glissement de souris. L'organisation devient un jeu
+                        d'enfant.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap blue">
+                        <i data-lucide="calendar"></i>
+                    </div>
+                    <h3>Calendrier de Révision</h3>
+                    <p>Programmes tes sessions d'étude et suis tes progrès jour après jour. Ne manque plus jamais une
+                        séance.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap orange">
+                        <i data-lucide="folder-search"></i>
+                    </div>
+                    <h3>Recherche Intelligente</h3>
+                    <p>Retrouve n'importe quel cours en une fraction de seconde grâce à notre indexation ultra-rapide.
+                    </p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon-wrap gold">
+                        <i data-lucide="moon"></i>
+                    </div>
+                    <h3>Dark Mode Premium</h3>
+                    <p>Une interface sombre somptueuse pour tes sessions de révision nocturnes. Tes yeux te
+                        remercieront.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Prêt à passer au niveau supérieur ?</h2>
+                <p>Reprends le contrôle sur tes études dès aujourd'hui avec Classify.</p>
+                <a href="#" class="btn-primary lg white">Télécharger maintenant</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrap">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Classify Logo">
+                    <span>Classify</span>
+                    <p>© 2026 Drayko. Fait avec passion.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Confidentialité</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+
+</html>

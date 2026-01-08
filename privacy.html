@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidentialité - Classify</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 0.75rem;">
+                    <img src="logo.png" alt="Classify Logo">
+                    <span>Classify</span>
+                </a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Accueil</a>
+                <a href="index.html#features">Fonctionnalités</a>
+                <button class="theme-toggle" id="themeToggle" title="Changer de thème">
+                    <i data-lucide="sun" class="sun"></i>
+                    <i data-lucide="moon" class="moon"></i>
+                </button>
+                <a href="#" class="btn-primary">Télécharger</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero small">
+        <div class="container hero-centered">
+            <div class="hero-content">
+                <h1>Politique de Confidentialité</h1>
+                <p>Chez Classify, nous prenons ta vie privée très au sérieux. Voici comment nous traitons tes données.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="text-content">
+                <h2>1. Stockage Local uniquement</h2>
+                <p>C'est la base de Classify : <strong>tes données t'appartiennent</strong>. Toutes tes matières, tes
+                    dossiers, tes cours et tes notes sont stockés localement sur ton ordinateur. Nous n'avons aucun
+                    serveur centralisé qui stocke tes fichiers personnels.</p>
+
+                <h2>2. Pas de Collecte de Données Personnelles</h2>
+                <p>Nous ne collectons ni ton nom, ni ton adresse email, ni ton adresse IP. L'application fonctionne
+                    entièrement hors-ligne pour la gestion de tes documents.</p>
+
+                <h2>3. Tes Fichiers</h2>
+                <p>L'application ne fait que référencer les fichiers (PDF, Images, documents) que tu as déjà sur ton
+                    disque dur. Classify ne duplique pas tes fichiers et ne les envoie jamais sur le cloud.</p>
+
+                <h2>4. Modifications</h2>
+                <p>Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute
+                    modification sera publiée sur cette page.</p>
+
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-wrap">
+                <div class="footer-brand">
+                    <img src="logo.png" alt="Classify Logo">
+                    <span>Classify</span>
+                    <p>© 2026 Drayko. Fait avec passion.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="index.html">Accueil</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
+
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+    </script>
+</body>
+
+</html>
