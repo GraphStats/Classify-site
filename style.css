@@ -81,6 +81,7 @@ body {
     font-weight: 900;
     background: linear-gradient(to right, #9333ea, #3b82f6);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -460,6 +461,57 @@ body {
 [data-theme='dark'] .logo span {
     background: linear-gradient(to right, #a855f7, #60a5fa);
     -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
+}
+
+.pulse::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--primary);
+    border-radius: 50%;
+    animation: ripple 2s infinite;
+    opacity: 0.4;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(1);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: scale(3);
+        opacity: 0;
+    }
 }
 
 @media (max-width: 1024px) {
